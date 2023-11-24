@@ -1,5 +1,3 @@
-todos = []
-
 while True:
     user_action = input("Type add, show, edit, complete or exit: ")
     # Strip() The strip() method removes any leading, and trailing whitespaces.
@@ -13,8 +11,17 @@ while True:
     '''
     match user_action:
         case 'add':
-            todo = input("Enter a todo: ")
+            todo = input("Enter a todo: ") + "\n"
+
+            file = open('files/todos.txt', 'r')
+            todos = file.readlines()
+            file.close()
+
             todos.append(todo)
+
+            file = open('files/todos.txt', 'w')
+            file.writelines(todos)
+            file.close()
         case 'show':
             # enumerate() allows you to enumerate what it is inside the function
             for index, item in enumerate(todos):

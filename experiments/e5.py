@@ -10,4 +10,3 @@ match index:
         result = f"{'You chose '}{ips[1]}"
         print(result)
 
-        
