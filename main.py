@@ -36,8 +36,20 @@ while True:
             todos = file.readlines()
             file.close()
 
+            """# New list
+            new_todos = []
+
+            for item in todos:
+                # The strip () method removes any leading, and trailing whitespaces.
+                new_item = item.strip('\n')
+            print(todos)"""
+
+            """# List comprehension
+            new_todos = [item.strip('\n') for item in todos]"""
+
             # enumerate() allows you to enumerate what it is inside the function
             for index, item in enumerate(todos):
+                item = item.strip('\n')
                 # f-strings == formatting-strings to change the output of the print
                 row = f"{index + 1 }--{item}"
                 print(row)
