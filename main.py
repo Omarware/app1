@@ -11,18 +11,31 @@ while True:
     '''
     match user_action:
         case 'add':
+            # Get the todo from the user
             todo = input("Enter a todo: ") + "\n"
 
+            # Check files content with read (r) mode
+            file = open('files/todos.txt', 'r')
+            # Store the info in the todos list
+            todos = file.readlines()
+            # Close the file
+            file.close()
+
+            # Add more info at the bottom
+            todos.append(todo)
+
+            # Open the file in write (w) mode
+            file = open('files/todos.txt', 'w')
+            # Adds the data to the file
+            file.writelines(todos)
+            # Closes the file
+            file.close()
+        case 'show':
+            # todos needs to be defined as if add is being skipped, it will crash the program
             file = open('files/todos.txt', 'r')
             todos = file.readlines()
             file.close()
 
-            todos.append(todo)
-
-            file = open('files/todos.txt', 'w')
-            file.writelines(todos)
-            file.close()
-        case 'show':
             # enumerate() allows you to enumerate what it is inside the function
             for index, item in enumerate(todos):
                 # f-strings == formatting-strings to change the output of the print
