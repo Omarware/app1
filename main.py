@@ -21,7 +21,7 @@ while True:
             # Close the file
             file.close() """
 
-            with open('todos.txt', 'r') as file:
+            with open('files/todos.txt', 'r') as file:
                 todos = file.readlines()
 
             # Add more info at the bottom
@@ -34,14 +34,17 @@ while True:
             # Closes the file
             file.close()"""
 
-            with open('todox.txt', 'w') as file:
+            with open('files/todo.txt', 'w') as file:
                 file.writelines(todos)
 
         case 'show':
-            # todos needs to be defined as if add is being skipped, it will crash the program
+            """# todos needs to be defined as if add is being skipped, it will crash the program
             file = open('files/todos.txt', 'r')
             todos = file.readlines()
-            file.close()
+            file.close()"""
+
+            with open('files/todos.txt', 'r') as file:
+                file.readlines()
 
             """# New list
             new_todos = []
