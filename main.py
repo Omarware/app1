@@ -14,22 +14,29 @@ while True:
             # Get the todo from the user
             todo = input("Enter a todo: ") + "\n"
 
-            # Check files content with read (r) mode
+            """# Check files content with read (r) mode
             file = open('files/todos.txt', 'r')
             # Store the info in the todos list
             todos = file.readlines()
             # Close the file
-            file.close()
+            file.close() """
+
+            with open('todos.txt', 'r') as file:
+                todos = file.readlines()
 
             # Add more info at the bottom
             todos.append(todo)
 
-            # Open the file in write (w) mode
+            """# Open the file in write (w) mode
             file = open('files/todos.txt', 'w')
             # Adds the data to the file
             file.writelines(todos)
             # Closes the file
-            file.close()
+            file.close()"""
+
+            with open('todox.txt', 'w') as file:
+                file.writelines(todos)
+
         case 'show':
             # todos needs to be defined as if add is being skipped, it will crash the program
             file = open('files/todos.txt', 'r')
