@@ -1,3 +1,4 @@
-study
-prepare
-certificate
+Learn Python
+Learn 
+Learn Linux
+Learn SQL

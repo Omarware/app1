@@ -14,54 +14,25 @@ while True:
             # Get the todo from the user
             todo = input("Enter a todo: ") + "\n"
 
-            """# Check files content with read (r) mode
-            file = open('files/todos.txt', 'r')
-            # Store the info in the todos list
-            todos = file.readlines()
-            # Close the file
-            file.close() """
-
             with open('files/todos.txt', 'r') as file:
                 todos = file.readlines()
 
             # Add more info at the bottom
             todos.append(todo)
 
-            """# Open the file in write (w) mode
-            file = open('files/todos.txt', 'w')
-            # Adds the data to the file
-            file.writelines(todos)
-            # Closes the file
-            file.close()"""
-
-            with open('files/todo.txt', 'w') as file:
+            with open('files/todos.txt', 'w') as file:
                 file.writelines(todos)
 
         case 'show':
-            """# todos needs to be defined as if add is being skipped, it will crash the program
-            file = open('files/todos.txt', 'r')
-            todos = file.readlines()
-            file.close()"""
 
             with open('files/todos.txt', 'r') as file:
                 file.readlines()
-
-            """# New list
-            new_todos = []
-
-            for item in todos:
-                # The strip () method removes any leading, and trailing whitespaces.
-                new_item = item.strip('\n')
-            print(todos)"""
-
-            """# List comprehension
-            new_todos = [item.strip('\n') for item in todos]"""
 
             # enumerate() allows you to enumerate what it is inside the function
             for index, item in enumerate(todos):
                 item = item.strip('\n')
                 # f-strings == formatting-strings to change the output of the print
-                row = f"{index + 1 }--{item}"
+                row = f"{index + 1}--{item}"
                 print(row)
         case 'edit':
             number = int(input("Number of the todo to edit: "))
