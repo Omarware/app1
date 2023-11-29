@@ -29,7 +29,7 @@ while True:
             print(row)
 
     elif 'edit' in user_action:
-        number = int(input("Number of the todo to edit: "))
+        number = int(user_action[5:])
         number = number - 1
 
         with open('files/todos.txt', 'r') as file:
@@ -42,7 +42,7 @@ while True:
             file.writelines(todos)
         # Complete was added and method pop() to delete
     elif 'complete' in user_action:
-        number = int(input("Number of the todo to complete: "))
+        number = int(user_action[9:])
 
         with open('files/todos.txt', 'r') as file:
             todos = file.readlines()
