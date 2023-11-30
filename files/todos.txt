@@ -3,3 +3,7 @@ Learn Linux
 Learn SQL
 Learn MongoDB
 Learn Go
+Show me The Matrix
+This is the way Mandalorian
+Learn CompTIA A+
+Learn CompTIA Network+
